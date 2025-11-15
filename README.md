@@ -21,82 +21,58 @@ A minimal full-stack template with a **React + TypeScript** frontend (Vite) and 
 ## ☁️ Quick Start - GitHub Codespaces (Recommended)
 
 ### 1. Open in Codespaces
+Click **Code** → **Codespaces** → **Create codespace on main**
 
-Click the **Code** button on GitHub → Select **Codespaces** tab → Click **Create codespace on main**
+### 2. Automatic Setup (2-3 minutes)
+The devcontainer automatically installs:
+- ✅ JDK 17, Maven, Node.js 18
+- ✅ Builds backend and installs frontend dependencies
 
-### 2. Wait for Setup
-
-The devcontainer will automatically:
-- ✅ Install JDK 17
-- ✅ Install Maven
-- ✅ Install Node.js 18
-- ✅ Build the backend (`mvn package`)
-- ✅ Install frontend dependencies (`npm install`)
-
-This takes about 2-3 minutes on first launch.
-
-### 3. Start the Servers
-
-Once the Codespace is ready, open **two terminals**:
-
-**Terminal 1 - Start Backend:**
-```bash
-cd backend
-mvn spring-boot:run
-```
-Wait until you see: `Started DemoApplication in X seconds`
-
-**Terminal 2 - Start Frontend:**
-```bash
-cd frontend
-npm run dev
-```
-Wait until you see: `VITE v5.x.x ready in XXX ms`
-
-### 4. Access the Application
-
-VS Code will show port forwarding notifications. Click on the notification or:
-
-1. Go to the **PORTS** tab (usually at the bottom)
-2. Find port **3000** (Frontend)
-3. Click the globe icon 🌐 or the local address to open in browser
-
-You should see the React app displaying: **"Backend says: Hello World"**
-
-### 5. Verify Everything Works
-
-Test the backend API directly:
-```bash
-curl http://localhost:8080/api/hello
-```
-Expected response: `{"message":"Hello World"}`
-
-## 📋 Prerequisites (Local Development)
-
-- **Java 17** or higher
-- **Maven 3.6+**
-- **Node.js 18+** and npm
-
-## 🏃 Quick Start - Local
-
-### Option 1: Run Both Servers Separately
+### 3. Start Both Servers
 
 **Terminal 1 - Backend:**
 ```bash
-cd backend
-mvn spring-boot:run
+cd backend && mvn spring-boot:run
 ```
-Backend will start at `http://localhost:8080`
 
 **Terminal 2 - Frontend:**
+```bash
+cd frontend && npm run dev
+```
+
+### 4. Access Application
+- Go to **PORTS** tab → Click port **3000** 🌐
+- You should see: **"Backend says: Hello World"**
+
+### 5. Verify API
+```bash
+curl http://localhost:8080/api/hello
+# Expected: {"message":"Hello World"}
+```
+
+## 💻 Local Development
+
+### Prerequisites
+- Java 17+, Maven 3.6+, Node.js 18+
+
+### Run Development Servers
+
+**Backend:**
+```bash
+cd backend
+mvn spring-boot:run
+# Runs at http://localhost:8080
+```
+
+**Frontend:**
 ```bash
 cd frontend
 npm install
 npm run dev
+# Runs at http://localhost:3000
 ```
-Frontend will start at `http://localhost:3000`
 
-### Option 2: Build and Run
+### Build for Production
 
 **Backend:**
 ```bash
@@ -112,49 +88,6 @@ npm install
 npm run build    # Production build
 npm run preview  # Preview production build
 ```
-
-## ☁️ Quick Start - GitHub Codespaces
-
-1. **Open in Codespaces**: Click "Code" → "Create codespace on main"
-2. **Wait for setup**: The devcontainer will automatically:
-   - Install JDK 17, Maven, and Node.js
-   - Build the backend (`mvn package`)
-   - Install frontend dependencies (`npm install`)
-3. **Start the servers**:
-   
-   **Terminal 1:**
-   ```bash
-   cd backend && mvn spring-boot:run
-   ```
-   
-   **Terminal 2:**
-   ```bash
-   cd frontend && npm run dev
-   ```
-
-4. **Access the app**: 
-   - VS Code will show port forwarding notifications
-   - Click the notification or go to the "Ports" tab
-   - Open the forwarded URL for port 3000
-
-## ✅ Verification
-
-### Test the Backend API
-```bash
-curl http://localhost:8080/api/hello
-```
-Expected response:
-```json
-{"message":"Hello World"}
-```
-
-### Test the Frontend
-1. Open browser to `http://localhost:3000`
-2. You should see:
-   ```
-   React + TypeScript + Spring Boot
-   Backend says: Hello World
-   ```
 
 ## 📁 Project Structure
 
