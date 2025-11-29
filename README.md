@@ -1,11 +1,13 @@
 # React TypeScript + Spring Boot Starter Template 
 
+> 📖 **For detailed step-by-step instructions on running this project in GitHub Codespaces, see [README_CODESPACE_RUN.md](README_CODESPACE_RUN.md)**
+
 A minimal full-stack template with a **React + TypeScript** frontend (Vite) and a **Spring Boot** backend.
 
 ## 🚀 Features
 
 - **Backend**: Spring Boot 3.1.4 with Java 17
-  - REST API endpoint: `GET /api/hello` returns `{"message":"Hello World"}`
+  - REST API endpoint: `GET /` returns `{"message":"Hello Advance OOP Lab Students"}`
   - CORS enabled for development
   - Maven build system
 
@@ -45,12 +47,12 @@ cd frontend && npm run dev
 
 ### 4. Access Application
 - Go to **PORTS** tab → Click port **3000** 🌐
-- You should see: **"Backend says: Hello World"**
+- You should see: **"Backend says: Hello Advance OOP Lab Students"**
 
 ### 5. Verify API
 ```bash
-curl http://localhost:8080/api/hello
-# Expected: {"message":"Hello World"}
+curl http://localhost:8080/
+# Expected: {"message":"Hello Advance OOP Lab Students"}
 ```
 
 ## 💻 Local Development
@@ -147,7 +149,7 @@ react-ts-springboot-starter/
 
 **Port**: Default 3000 (configured in `vite.config.ts`)
 
-**API Proxy**: The frontend proxies `/api/*` requests to `http://localhost:8080`
+**API Proxy**: The frontend proxies requests to `http://localhost:8080`
 - This avoids CORS issues during development
 - In production, you'll need to configure your server or use environment variables
 

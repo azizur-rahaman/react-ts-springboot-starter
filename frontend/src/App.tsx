@@ -4,10 +4,8 @@ function App() {
   const [message, setMessage] = useState<string>('Loading...')
 
   useEffect(() => {
-    // Use environment variable for API URL in production, empty string uses Vite proxy in dev
-    const apiUrl = import.meta.env.VITE_API_URL || ''
-
-    fetch(`${apiUrl}/api/hello`)
+    // Use /api which gets proxied to backend root endpoint (slash /) via Vite proxy
+    fetch('/api')
       .then(res => res.json())
       .then(data => setMessage(data.message))
       .catch(err => setMessage('Error: ' + err.message))
